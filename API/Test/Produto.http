@@ -1,0 +1,29 @@
+### Listar os produtos
+GET https://localhost:5001/api/produto/list
+
+### Buscar um produto pelo id
+GET https://localhost:5001/api/produto/getbyid/1
+
+### Cadastrar um produto
+POST https://localhost:5001/api/produto/create
+Content-Type: application/json
+
+{
+    "NomeProduto" : "Pneu",
+    "Categoria" : "automovel",    
+    "Preco" : 20,
+    "fornecedor" : "adpaschoal"
+}
+
+### Deletar um produto / deletar/nome
+DELETE https://localhost:5001/api/funcionario/deletar/pneu
+
+### Alterar um produto
+PATCH https://localhost:5001/api/funcionario/update
+Content-Type: application/json
+
+{
+    "funcionarioid" : 10,
+    "nome" : "diogo deconto modificado",
+    "cpf" : "123"
+}
