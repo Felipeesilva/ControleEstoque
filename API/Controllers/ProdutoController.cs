@@ -23,8 +23,11 @@ namespace API.Controllers
         [Route("create")]
         [HttpPost]
 
-        public IActionResult Create([FromBody] Produto produto)
-        {
+        public IActionResult Create([FromBody] Produto produto) 
+        
+        
+
+      {
             Produto produtoEncontrado = _context.Produtos.FirstOrDefault(p => p.NomeProduto == produto.NomeProduto);
             if (produtoEncontrado == null)
 
@@ -33,6 +36,7 @@ namespace API.Controllers
             return Created("", produto);
 
         }
+
 
         //GET: api/produto/list
         [Route("list")]
@@ -70,7 +74,7 @@ namespace API.Controllers
         }
 
         //PUT: api/produto/update
-        [HttpPut]
+        [HttpPatch]
         [Route("update")]
         public IActionResult Update([FromBody] Produto produto)
         {

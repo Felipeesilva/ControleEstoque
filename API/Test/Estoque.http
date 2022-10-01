@@ -1,0 +1,30 @@
+### Listar os estoques
+GET https://localhost:5001/api/estoque/list
+
+### Buscar um fornecedor pelo id
+GET https://localhost:5001/api/fornecedor/getbyid/1
+
+### Cadastrar um fornecedor
+POST https://localhost:5001/api/estoque/create
+Content-Type: application/json
+
+{
+    "TipoEstoque" : "teste",
+    "QuantidadeProduto" : 9,    
+    "ValorProduto" : 10
+}
+
+### Deletar um fornecedor / deletar/nome
+DELETE https://localhost:5001/api/estoque/delete/Pneu
+
+### Alterar um fornecedor
+PATCH https://localhost:5001/api/estoque/update
+Content-Type: application/json
+
+{
+   "ProdutoId" : 2,
+    "QuantidadeProduto" : 3,    
+    "ValorProduto" : 10,
+    "TipoEstoque" : "parachoques"
+  
+}

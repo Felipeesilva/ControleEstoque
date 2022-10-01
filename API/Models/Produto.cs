@@ -9,6 +9,7 @@ namespace API
         public Produto() => CriadoEm = DateTime.Now;
 
         [Key()]
+
         public int ProdutoId { get; set; }
 
         public String NomeProduto { get; set; }
@@ -17,8 +18,8 @@ namespace API
 
         public int Preco { get; set; }
 
-        // public String fornecedor { get; set; }
-        // public String Estoque { get; set; }
+        public string Fornecedor { get; set; }
+       // public virtual Fornecedor fornecedor { get; set; } 
 
         public DateTime CriadoEm { get; set; }
 

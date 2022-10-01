@@ -1,0 +1,29 @@
+### Listar os fornecedores
+GET https://localhost:5001/api/fornecedor/list
+
+### Buscar um fornecedor pelo id
+GET https://localhost:5001/api/fornecedor/getbyid/1
+
+### Cadastrar um fornecedor
+POST https://localhost:5001/api/fornecedor/create
+Content-Type: application/json
+
+{
+    "NomeFornecedor" : "fiat",
+    "CnpjFornecedor" : "12345678912345",    
+    "EmailFornecedor" : "Fiat@gmail.com"
+}
+
+### Deletar um fornecedor / deletar/nome
+DELETE https://localhost:5001/api/fornecedor/delete/Pneu
+
+### Alterar um fornecedor
+PATCH https://localhost:5001/api/fornecedor/update
+Content-Type: application/json
+
+{
+    "NomeFornecedor" : "Ferrari",
+    "CnpjFornecedor" : "12345678555555",    
+    "EmailFornecedor" : "Ferrari@gmail.com"
+  
+}

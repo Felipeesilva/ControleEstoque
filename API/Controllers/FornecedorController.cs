@@ -69,7 +69,7 @@ namespace API.Controllers
         }
 
         //PUT: api/fornecedor/update
-        [HttpPut]
+        [HttpPatch]
         [Route("update")]
         public IActionResult Update([FromBody] Fornecedor fornecedor)
         {

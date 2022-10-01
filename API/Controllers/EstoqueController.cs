@@ -19,21 +19,31 @@ namespace API.Controllers
         [Route("create")]
         public IActionResult Create([FromBody] Estoque estoque)
         {
-            // Estoque estoqueEncontrado = _context.Estoques.FirstOrDefault(e => e.TipoEstoque == estoque.TipoEstoque);
+             Estoque estoqueEncontrado = _context.Estoques.FirstOrDefault(e => e.TipoEstoque == estoque.TipoEstoque);
 
-            // if(estoqueEncontrado == null)
-            // {
+             if(estoqueEncontrado == null)
+             {
             _context.Estoques.Add(estoque);
             _context.SaveChanges();
             return Created("", estoque);
-            // }
-            // return NotFound();
+             }
+             return NotFound();
         }
 
         //GET: api/estoque/list
         [HttpGet]
         [Route("list")]
         public IActionResult List() => Ok(_context.Estoques.ToList());
+
+        [HttpPatch]
+        [Route("update")]
+        public IActionResult Update([FromBody] Estoque estoque)
+        {
+            _context.Estoques.Update(estoque);
+            
+            _context.SaveChanges();
+            return Ok(estoque);
+        }
 
     }
 }

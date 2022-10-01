@@ -9,14 +9,16 @@ namespace API
         public Estoque() => CriadoEm = DateTime.Now;
 
         [Key()]
-        public string EstoqueId { get; set; } 
+        public int EstoqueId { get; set; } 
 
-        public string ProdutoId { get; set; } 
+        public int ProdutoId { get; set; } 
         public virtual Produto produto { get; set; } 
         
         public int QuantidadeProduto { get; set; }
 
         public int ValorProduto { get; set; }
+
+        public string TipoEstoque { get; set; } 
 
         public DateTime CriadoEm { get; set; }
         

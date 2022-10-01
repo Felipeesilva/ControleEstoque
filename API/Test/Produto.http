@@ -2,28 +2,32 @@
 GET https://localhost:5001/api/produto/list
 
 ### Buscar um produto pelo id
-GET https://localhost:5001/api/produto/getbyid/1
+GET https://localhost:5001/api/produto/getbyid/2
 
 ### Cadastrar um produto
 POST https://localhost:5001/api/produto/create
 Content-Type: application/json
 
 {
-    "NomeProduto" : "Pneu",
+    "NomeProduto" : "farol",
     "Categoria" : "automovel",    
-    "Preco" : 20,
-    "fornecedor" : "adpaschoal"
+    "Preco" : 500,
+    "Fornecedor" : "fiat"
+    
+    
 }
 
 ### Deletar um produto / deletar/nome
-DELETE https://localhost:5001/api/funcionario/deletar/pneu
+DELETE https://localhost:5001/api/produto/delete/Pneu
 
 ### Alterar um produto
-PATCH https://localhost:5001/api/funcionario/update
+PATCH https://localhost:5001/api/produto/update
 Content-Type: application/json
 
 {
-    "funcionarioid" : 10,
-    "nome" : "diogo deconto modificado",
-    "cpf" : "123"
+    "NomeProduto" : "parachoque",
+    "Categoria" : "automovel",    
+    "Preco" : 500,
+    "Fornecedor" : "fiat"
+  
 }
