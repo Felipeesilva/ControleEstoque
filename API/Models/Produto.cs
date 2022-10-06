@@ -12,11 +12,13 @@ namespace API
 
         public int ProdutoId { get; set; }
 
-        public String NomeProduto { get; set; }
-
-        public String Categoria { get; set; }
+        public string Nome { get; set; }
+        public string TipoEstoque { get; set; }
+        public string Categoria { get; set; }
 
         public int Preco { get; set; }
+
+        public int Quantidade { get; set; }
 
         public string Fornecedor { get; set; }
        // public virtual Fornecedor fornecedor { get; set; } 

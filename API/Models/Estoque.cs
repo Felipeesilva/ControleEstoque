@@ -10,12 +10,9 @@ namespace API
 
         [Key()]
         public int EstoqueId { get; set; } 
-
-        public int ProdutoId { get; set; } 
-        public virtual Produto produto { get; set; } 
+        //public int ProdutoId { get; set; } 
+        public Produto Produto { get; set; } 
         
-        public int QuantidadeProduto { get; set; }
-
         public int ValorProduto { get; set; }
 
         public string TipoEstoque { get; set; } 

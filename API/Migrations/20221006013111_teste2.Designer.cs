@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace API.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20220930002515_EstoqueId]")]
-    partial class EstoqueId
+    [Migration("20221006013111_teste2")]
+    partial class teste2
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -20,27 +20,25 @@ namespace API.Migrations
 
             modelBuilder.Entity("API.Estoque", b =>
                 {
-                    b.Property<string>("EstoqueId")
-                        .HasColumnType("TEXT");
+                    b.Property<int>("EstoqueId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
 
                     b.Property<DateTime>("CriadoEm")
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("ProdutoId")
+                    b.Property<int?>("ProdutoId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("TipoEstoque")
                         .HasColumnType("TEXT");
-
-                    b.Property<int?>("ProdutoId1")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<int>("QuantidadeProduto")
-                        .HasColumnType("INTEGER");
 
                     b.Property<int>("ValorProduto")
                         .HasColumnType("INTEGER");
 
                     b.HasKey("EstoqueId");
 
-                    b.HasIndex("ProdutoId1");
+                    b.HasIndex("ProdutoId");
 
                     b.ToTable("Estoques");
                 });
@@ -80,11 +78,20 @@ namespace API.Migrations
                     b.Property<DateTime>("CriadoEm")
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("NomeProduto")
+                    b.Property<string>("Fornecedor")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Nome")
                         .HasColumnType("TEXT");
 
                     b.Property<int>("Preco")
                         .HasColumnType("INTEGER");
+
+                    b.Property<int>("Quantidade")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("TipoEstoque")
+                        .HasColumnType("TEXT");
 
                     b.HasKey("ProdutoId");
 
@@ -93,11 +100,11 @@ namespace API.Migrations
 
             modelBuilder.Entity("API.Estoque", b =>
                 {
-                    b.HasOne("API.Produto", "produto")
+                    b.HasOne("API.Produto", "Produto")
                         .WithMany()
-                        .HasForeignKey("ProdutoId1");
+                        .HasForeignKey("ProdutoId");
 
-                    b.Navigation("produto");
+                    b.Navigation("Produto");
                 });
 #pragma warning restore 612, 618
         }

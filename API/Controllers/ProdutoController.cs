@@ -28,7 +28,7 @@ namespace API.Controllers
         
 
       {
-            Produto produtoEncontrado = _context.Produtos.FirstOrDefault(p => p.NomeProduto == produto.NomeProduto);
+            Produto produtoEncontrado = _context.Produtos.FirstOrDefault(p => p.Nome == produto.Nome);
             if (produtoEncontrado == null)
 
                 _context.Produtos.Add(produto);
@@ -62,7 +62,7 @@ namespace API.Controllers
         public IActionResult Delete([FromRoute] string name)
         {
 
-            Produto produto = _context.Produtos.FirstOrDefault(produto => produto.NomeProduto == name);
+            Produto produto = _context.Produtos.FirstOrDefault(produto => produto.Nome == name);
 
             if (produto == null)
             {

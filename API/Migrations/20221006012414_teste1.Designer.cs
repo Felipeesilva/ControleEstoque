@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace API.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20221001200330_mudancasEstoque")]
-    partial class mudancasEstoque
+    [Migration("20221006012414_teste1")]
+    partial class teste1
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -27,10 +27,7 @@ namespace API.Migrations
                     b.Property<DateTime>("CriadoEm")
                         .HasColumnType("TEXT");
 
-                    b.Property<int>("ProdutoId")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<int>("QuantidadeProduto")
+                    b.Property<int?>("ProdutoId")
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("TipoEstoque")
@@ -81,11 +78,20 @@ namespace API.Migrations
                     b.Property<DateTime>("CriadoEm")
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("NomeProduto")
+                    b.Property<string>("Fornecedor")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Nome")
                         .HasColumnType("TEXT");
 
                     b.Property<int>("Preco")
                         .HasColumnType("INTEGER");
+
+                    b.Property<int>("Quantidade")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("TipoEstoque")
+                        .HasColumnType("TEXT");
 
                     b.HasKey("ProdutoId");
 
@@ -94,13 +100,11 @@ namespace API.Migrations
 
             modelBuilder.Entity("API.Estoque", b =>
                 {
-                    b.HasOne("API.Produto", "produto")
+                    b.HasOne("API.Produto", "Produto")
                         .WithMany()
-                        .HasForeignKey("ProdutoId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("ProdutoId");
 
-                    b.Navigation("produto");
+                    b.Navigation("Produto");
                 });
 #pragma warning restore 612, 618
         }
